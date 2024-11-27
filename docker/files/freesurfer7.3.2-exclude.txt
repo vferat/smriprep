@@ -303,7 +303,6 @@ freesurfer/bin/meanval
 freesurfer/bin/mergeseg
 freesurfer/bin/merge_stats_tables
 freesurfer/bin/minc2seqinfo
-freesurfer/bin/mkheadsurf
 freesurfer/bin/mkima_index.tcl
 freesurfer/bin/mkmnc_index.tcl
 freesurfer/bin/mksubjdirs
