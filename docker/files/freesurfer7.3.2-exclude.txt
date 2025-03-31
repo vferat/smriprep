@@ -413,7 +413,6 @@ freesurfer/bin/mri_make_template
 freesurfer/bin/mri_map_cpdat
 freesurfer/bin/mri_maps2csd
 freesurfer/bin/mri_mark_temporal_lobe
-freesurfer/bin/mri_mc
 freesurfer/bin/mri_mcsim
 freesurfer/bin/mri_mergelabels
 freesurfer/bin/mri_mi
@@ -478,7 +477,6 @@ freesurfer/bin/mris_distance_map
 freesurfer/bin/mris_distance_to_label
 freesurfer/bin/mris_distance_transform
 freesurfer/bin/mri_segcentroids
-freesurfer/bin/mri_seghead
 freesurfer/bin/mri_segment_hypothalamic_subunits
 freesurfer/bin/mri_segment_tumor
 freesurfer/bin/mri_segment_wm_damage
@@ -747,7 +745,6 @@ freesurfer/diffusion
 freesurfer/docs/xml
 freesurfer/FreeSurferEnv.csh
 freesurfer/FreeSurferEnv.sh
-freesurfer/fsfast
 freesurfer/lib/bem/ic0.tri
 freesurfer/lib/bem/ic1.tri
 freesurfer/lib/bem/ic2.tri
