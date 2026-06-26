@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
         exclude: '.gitignore|.*\.gii$'
@@ -10,11 +10,30 @@ repos:
       - id: check-added-large-files
       - id: check-toml
       - id: check-json
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.3
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
     hooks:
-      - id: ruff
-        args: [ --fix ]
+      - id: rst-backticks
+        exclude: ^CHANGES.rst
+      - id: rst-directive-colons
+      - id: rst-inline-touching-normal
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.4
+    hooks:
+      - id: ruff-check
+        args: [ --fix, --show-fixes ]
       - id: ruff-format
-      - id: ruff
-        args: [ --select, ISC001, --fix ]
+  - repo: https://github.com/woodruffw/zizmor-pre-commit
+    rev: v1.22.0
+    hooks:
+      - id: zizmor
+  - repo: local
+    hooks:
+      - id: check-python-headers
+        name: check python headers
+        entry: python3 tools/check_python_headers.py
+        language: system
+        files: ^(src|test)/.*\.py$
+        pass_filenames: false
+ci:
+  autoupdate_schedule: monthly

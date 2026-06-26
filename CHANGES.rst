@@ -1,3 +1,71 @@
+0.19.2 (September 24, 2025)
+===========================
+Bug-fix release in the 0.19.x series.
+
+For users attempting to run sMRIPrep or fMRIPrep with precomputed derivatives,
+the FreeSurfer-to-anat transform was being found but not passed to the relevant nodes.
+This should only affect users who deleted subject-native surface GIFTI files in an
+effort to save space.
+
+This fix does not change the calculation of the transform, so users do not need to
+recalculate the transform to benefit from this fix.
+
+* FIX: Use pre-computed FreeSurfer-to-anat transform, when found (#497)
+
+0.19.1 (September 12, 2025)
+===========================
+Bug-fix release in the 0.19.x series.
+
+Fixed a package metadata error.
+
+0.19.0 (September 12, 2025)
+===========================
+New feature release in the 0.19.x series.
+
+This release enables per-session processing and more flexible surfacet resampling.
+
+* FIX: Collate pre-computed transforms correctly (#487)
+* ENH: Resample surfaces to any space/density using Connectome Workbench. (#473)
+* ENH: Generate cortex mask in during fit stage (#482)
+* ENH: Use output surfaces in internal nodes, ensuring greater consistency (#483)
+* ENH: Enable per-session processing (#480)
+* DOC: Fix typo in citation boilerplate (sMRIPprep → sMRIPrep) (#489)
+* STY: ISC rules do not conflict with the formatter any more (#484)
+
+0.18.0 (May 08, 2025)
+=====================
+New feature release in the 0.18.x series.
+
+This release patches the FSL FAST interface to disable bias field correction,
+which is redundant with N4 and can cause problems in some populations.
+
+* FIX: Respect label order in precomputed derivatives (#478)
+* FIX: Set FAST bias_iters parameter to 0 (#472)
+* ENH: Tag structural workflows (#476)
+* MNT: Update pinned environment, use conda-forge connectome-workbench (#468)
+
+0.17.0 (December 19, 2024)
+==========================
+New feature release in the 0.17.x series.
+
+This release improves handling of datasets where T1w images are not
+the primary modality. It also supports the generation of fsLR meshes
+on the subject surface with the names:
+
+```
+sub-<label>/anat/sub-<label>_hemi-<L|R>_space-fsLR_den-<label>_<surface>.surf.gii
+```
+
+These are useful for plotting CIFTI results on subject anatomy.
+
+* FIX: Stop excluding FS minc_modify_header used during fallback registration (#453)
+* ENH: Output fsLR meshes on subject surfaces (#460)
+* ENH: Support spatial normalization to alternative modalities (#459)
+* ENH: Add `t2w_file` output to `TemplateFlowSelect` (#457)
+* MNT: Enable pre-release tests (#461)
+* MNT: Complete transition from flake8/black to ruff (#435)
+* MNT: Adopt src/ layout and tox (#458)
+
 0.16.1 (August 26, 2024)
 ========================
 A bug-fix release that reworks selection within the
